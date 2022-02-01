@@ -1,0 +1,21 @@
+{
+  "name": "videocourse",
+  "version": "1.0.0",
+  "description": "This is a video course download website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "video",
+    "videocourse"
+  ],
+  "author": "TAWFIQ",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1"
+  }
+}
