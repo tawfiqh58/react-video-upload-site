@@ -14,7 +14,7 @@ function App() {
   };
 
   const getVideos = () => {
-    Axios.get("https://react-fileupload.thedeveloperx.com/videos").then((response) => {
+    Axios.get(`${process.env.REACT_APP_API_URL}/videos`).then((response) => {
       setVideoList(response.data);
     });
   };
@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   const deleteVideos = (id) => {
-    Axios.delete(`https://react-fileupload.thedeveloperx.com/delete/${id}`).then((response) => {
+    Axios.delete(`${process.env.REACT_APP_API_URL}/delete/${id}`).then((response) => {
       setVideoList(
         videoList.filter((val) => {
           return val.id != id;
@@ -42,7 +42,7 @@ function App() {
         return (
           <div className="employee">
             <div>
-              <video src={`https://react-fileupload.thedeveloperx.com/${val.filename}`} width="750" height="500" controls>
+              <video src={`${process.env.REACT_APP_API_URL}/${val.filename}`} width="750" height="500" controls>
               </video>
               <h3>{val.filename}</h3>
               <button

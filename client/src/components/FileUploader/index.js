@@ -21,7 +21,7 @@ export const FileUploader = ({onSuccess}) => {
             data.append('file', files[i]);
         }
 
-        axios.post('https://react-fileupload.thedeveloperx.com/upload', data)
+        axios.post(`${process.env.REACT_APP_API_URL}/upload`, data)
             .then((response) => {
                 toast.success('Upload Success');
                 onSuccess(response.data)

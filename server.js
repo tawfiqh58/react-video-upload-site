@@ -2,12 +2,15 @@ const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
 const mysql = require("mysql");
+require("dotenv");
+
+const PORT= process.env.PORT || 8000;
 
 const db = mysql.createConnection({
-    user: "formrsyo_root",
-    host: "localhost",
-    password: "6tKBV2GYdA@WRLu",
-    database: "formrsyo_databasename",
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 const app = express();
@@ -114,6 +117,6 @@ app.delete("/delete/:id", (req, res) => {
     });
 });
 
-app.listen(8000, () => {
-    console.log('http://localhost:8000')
+app.listen(PORT, () => {
+    console.log(`Server is connected! \nhttp://localhost:${PORT}`)
 });
