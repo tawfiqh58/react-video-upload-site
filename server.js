@@ -7,11 +7,17 @@ require("dotenv");
 const PORT= process.env.PORT || 8000;
 
 const db = mysql.createConnection({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    user: 'root',
+    host: 'localhost',
+    password: '123456789',
+    database: 'databasename',
 });
+// const db = mysql.createConnection({
+//     user: process.env.DB_USER,
+//     host: process.env.DB_HOST,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+// });
 
 const app = express();
 

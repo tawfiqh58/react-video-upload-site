@@ -41,7 +41,7 @@ export const FileUploader = ({onSuccess}) => {
                        multiple/>
             </div>
             
-            <button>Submit</button>
+            <button>Upload</button>
         </form>
     )
 };
